@@ -9,6 +9,7 @@ from keras.layers import Conv2D, MaxPooling2D
 from keras import utils
 from matplotlib import pyplot as plt
 import tensorflow as tf
+import numpy as np
 
 #we need to export and import the model im p sure 
 
@@ -87,4 +88,4 @@ new_model = tf.keras.models.load_model('mnistModel.model')
 #making predictions based on the imported model
 predictions = new_model.predict([X_test])
 
-print()
+print(np.argmax(predictions[0]))
