@@ -19,12 +19,16 @@ def preprocess_input_image2(img_path):
     img_array = img_array.reshape((1, 28, 28, 1)).astype('float32') / 255.0  # Reshape and normalize
     return img_array
 
-img_path = r'C:\Users\HP\Documents\mnist_tests\seven.jpg'  
-processed_image = preprocess_input_image2(img_path)
+img_path = r'C:\Users\HP\Documents\mnist_tests\six.jpg'  
+processed_image = preprocess_input_image(img_path)
+processed_image2 = preprocess_input_image2(img_path)
 #loading the model again ok
-new_model = tf.keras.models.load_model('mnistModel2.model')
+new_model = tf.keras.models.load_model('mnistModel.model')
+new_model2 = tf.keras.models.load_model('mnistModel2.model')
 
 #making predictions based on the imported model
-prediction = new_model.predict([processed_image])
+prediction1 = new_model.predict([processed_image])
+prediction2 = new_model2.predict([processed_image2])
 
-print(np.argmax(prediction))
+print(f"Prediction with network with dense layers: {np.argmax(prediction1)}")
+print(f"Prediction with convolutional network: {np.argmax(prediction2)}")
