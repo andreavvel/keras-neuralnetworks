@@ -69,3 +69,7 @@ plt.ylabel('loss')
 plt.xlabel('epoch')
 plt.legend(['train', 'val'], loc='upper left')
 plt.show()
+
+#saving our model
+#we could save it as a model
+model.save('mnistModel2.model')

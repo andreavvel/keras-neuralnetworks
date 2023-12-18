@@ -83,9 +83,9 @@ with open("mnistModel.json", "w") as json_file:
 model.save_weights("model_weights.h5")
 
 #loading the model again ok
-new_model = tf.keras.models.load_model('mnistModel.model')
+#new_model = tf.keras.models.load_model('mnistModel.model')
 
 #making predictions based on the imported model
-predictions = new_model.predict([X_test])
+#predictions = new_model.predict([X_test])
 
-print(np.argmax(predictions[0]))
+#print(np.argmax(predictions[0]))
