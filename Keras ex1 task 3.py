@@ -19,7 +19,7 @@ def preprocess_input_image2(img_path):
     img_array = img_array.reshape((1, 28, 28, 1)).astype('float32') / 255.0  # Reshape and normalize
     return img_array
 
-img_path = r'C:\Users\HP\Documents\mnist_tests\six.jpg'  
+img_path = r'C:\Users\HP\Documents\mnist_tests\three.jpg'  
 processed_image = preprocess_input_image(img_path)
 processed_image2 = preprocess_input_image2(img_path)
 #loading the model again ok
