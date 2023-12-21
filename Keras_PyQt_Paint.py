@@ -10,7 +10,7 @@ from PyQt6.QtGui import QPainter, QColor, QFont, QColorConstants
 
 
 # The size and color of the pen
-PEN_WIDTH = 3
+PEN_WDTH = 3
 PEN_COLOR = QColorConstants.White
 
 # The size of the drawing field PIXMAP_SIZE x PIXMAP_SIZE
@@ -72,7 +72,7 @@ class Paint(QtWidgets.QMainWindow):
         """
         if event.button() == Qt.MouseButton.LeftButton:
             painter = QPainter(self.image)  
-            painter.setPen(QPen(PEN_COLOR, PEN_WIDTH))
+            painter.setPen(QPen(PEN_COLOR, PEN_WDTH))
             painter.drawPoint(event.pos())
             self.drawing = True  
             self.lastPoint = event.pos()
@@ -85,7 +85,7 @@ class Paint(QtWidgets.QMainWindow):
         """
         if (event.buttons() & Qt.MouseButton.LeftButton) == Qt.MouseButton.LeftButton and self.drawing:
             painter = QPainter(self.image) 
-            painter.setPen(QPen(PEN_COLOR, PEN_WIDTH))
+            painter.setPen(QPen(PEN_COLOR, PEN_WDTH))
             painter.drawLine(self.lastPoint, event.pos())
             self.lastPoint = event.pos()
             self.update()
